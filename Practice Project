@@ -1,0 +1,26 @@
+--created a video game store database
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, rating INTEGER, aisle INTEGER);
+
+INSERT INTO store VALUES
+(1, "HALO: CE", 15, 9, 3),
+(2, "Gears of War", 10, 8, 4),
+(3, "Assassin's Creed", 11, 8.5, 2),
+(4, "Turok", 7, 8, 2),
+(5, "Halo 2", 15, 10, 3),
+(6, "Halo 3", 15, 10, 3),
+(7, "Halo 4", 15, 8, 3),
+(8, "Gears of War 2", 10, 7, 4),
+(9, "Gears of War 3", 8, 6, 4),
+(10, "Pokemon Yellow", 20, 10, 5),
+(11, "Pokemon Crystal", 15, 9, 5),
+(12, "Pokemon Emerald", 12, 8, 5),
+(13, "Sly Cooper", 10, 9, 1),
+(14, "Spyro", 10, 8, 1),
+(15, "Yugioh FMR", 13, 10, 1);
+SELECT * FROM store;
+
+--found the total quantity of items sold in store
+SELECT SUM(quantity) FROM store;
+
+--showed products with a rating of 9 or higher and organized by aisle
+SELECT * FROM store WHERE rating >= 9 ORDER BY aisle;
