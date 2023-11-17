@@ -73,7 +73,7 @@ FROM fortune_companies
 WHERE industry = 'Manufacturing'
 ;
 
-# Assign all the companies in the finance industry as "Large", "Medium", or "Small" based on number of employees. Ordered from largest to smallest size.
+# Assign all the companies in the finance industry as "Large", "Medium", or "Small" based on number of employees.
 
 SELECT company_name,
 CASE
@@ -83,15 +83,13 @@ CASE
 END as company_size
 FROM fortune_companies
 WHERE industry = 'Finance'
-ORDER BY company_size ASC
 ;
 
-# Which industries have an average revenue of at least $120 billion, and what are those average revenues? Ordered from largest to smallest revenue.
+# Which industries have an average revenue of at least $120 billion, and what are those average revenues?
 
 SELECT industry, ROUND(AVG(revenue),1) as average_revenue_billions
 FROM fortune_companies
 GROUP BY industry
 HAVING average_revenue_billions>=120
-ORDER BY revenue DESC
 ;
 
